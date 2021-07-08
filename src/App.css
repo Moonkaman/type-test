@@ -1,5 +1,5 @@
-.App {
-  text-align: center;
+body {
+
 }
 
 .App-logo {
@@ -35,4 +35,39 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.main-card {
+  max-width: 1000px;
+  margin: 200px auto 0 auto;
+  box-shadow: 0px 0px 20px #bdbdbd;
+}
+
+.quote-text {
+  font-weight: bold;
+  color: #858a95;
+}
+
+.results-card {
+  display: flex;
+  max-width: 1000px;
+  margin: 200px auto 0 auto;
+  box-shadow: 0px 0px 20px #bdbdbd;
+  margin-top: 20px;
+}
+
+.current-word {
+  color: #4a69bd
+}
+
+.correct {
+  color: #6ab04c
+}
+
+.incorrect {
+  color: #eb4d4b
+}
+
+.wrong-word {
+  background: #ff7979 !important
 }
