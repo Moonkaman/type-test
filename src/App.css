@@ -37,6 +37,23 @@ body {
   }
 }
 
+.profile-photo {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.login-view-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.login-card {
+  max-width: 400px;
+  margin: 0 auto 0 auto;
+}
+
 .main-card {
   max-width: 1000px;
   margin: 200px auto 0 auto;
