@@ -4,6 +4,7 @@ import {BrowserRouter as Router} from 'react-router-dom'
 
 import App from './App.jsx';
 import { AuthProvider } from './contexts/AuthContext'
+import { DataProvider } from './contexts/DataContext'
 
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -11,9 +12,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <AuthProvider>
-        <App />
-      </AuthProvider>
+      <DataProvider>        
+        <AuthProvider>
+          <App />
+        </AuthProvider>
+      </DataProvider>
     </Router>
   </React.StrictMode>,
   document.getElementById('root')

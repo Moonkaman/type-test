@@ -88,3 +88,7 @@ body {
 .wrong-word {
   background: #ff7979 !important
 }
+
+.high-score-card {
+  margin: 35px;
+}

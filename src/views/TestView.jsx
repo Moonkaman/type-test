@@ -1,6 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react'
-import {convertText, calculateScore, checkWordSoFar} from '../utils/TypeTestFunctions'
-import {Card, FormControl, ListGroup} from 'react-bootstrap'
+import { convertText, calculateScore, checkWordSoFar } from '../utils/TypeTestFunctions'
+import { Card, FormControl, ListGroup } from 'react-bootstrap'
+
+import { useAuth } from '../contexts/AuthContext'
+import { useData } from '../contexts/DataContext'
 
 import ResultsCard from '../components/ResultsCard';
 
@@ -19,6 +22,9 @@ export default function TestView() {
   const {currentTime, startTimer, stopTimer, timerRunning} = useTimer()
 
   const textInput = useRef(null)
+
+  const {currentUser} = useAuth()
+  const {createHighScore} = useData()
 
   useEffect(_ => {
     fetch('https://api.kanye.rest/')
@@ -61,6 +67,12 @@ export default function TestView() {
       }
     }
   }, [typedWordBank])
+
+  useEffect(_ => {
+    if (results) {
+      createHighScore(results, currentUser)
+    }
+  }, [results])
 
   const handleChange = e => {
     startTimer()

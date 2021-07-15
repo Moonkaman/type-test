@@ -9,6 +9,7 @@ import PrivateRoute from './components/PrivateRoute';
 
 import LoginView from './views/LoginView';
 import TestView from './views/TestView';
+import HighScoreView from './views/HighScoreView';
 
 function App() {
   const {currentUser, signOut} = useAuth()
@@ -41,6 +42,7 @@ function App() {
         </Navbar>
         <Switch>
           <PrivateRoute exact path="/" component={TestView} />
+          <PrivateRoute exact path="/high-scores" component={HighScoreView} />
           <Route exact path="/login" component={LoginView} />
         </Switch>
       </>
